@@ -1,0 +1,212 @@
+.Task {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+
+  .nav {
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    background-color: #28313bef;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+
+    .categorySelector {
+      position: relative;
+      select {
+        background-color: whitesmoke;
+        border: none;
+        border-radius: 4px;
+        padding: 3px;
+        min-width: 80px;
+        color: #28313bef;
+        cursor: pointer;
+        max-width: 100px;
+      }
+    }
+  }
+
+  .container {
+    width: 50%;
+    height: 400px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+    overflow-y: scroll;
+    position: relative;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 5px;
+
+    .task-data {
+      width: 100%;
+      display: flex;
+      height: 60px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      .task {
+        width: 70%;
+        height: 40px;
+        color: black;
+        padding: 5px 5px;
+        border-radius: 10px;
+        clear: both;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .task-btn {
+        width: 25%;
+        height: 40px;
+        background: linear-gradient(to bottom, #28313b, #485461);
+        color: white;
+        padding: 5px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .details-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 10000;
+        display: none;
+        opacity: 0;
+
+        &.details-active {
+          display: block;
+          opacity: 1;
+        }
+        .task-details {
+          width: 300px;
+          min-height: 150px;
+          height: fit-content;
+          background: white;
+          border-radius: 10px;
+          box-shadow: rgba(82, 67, 67, 0.35) 0px 5px 15px;
+          position: absolute;
+          left: 50%;
+          top: 40%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+          padding-top: 40px;
+
+          .closeBtn {
+            position: absolute;
+            top: 0;
+            left: 90%;
+            margin: 5px;
+            color: #4d61b2;
+            font-size: 20px;
+            cursor: pointer;
+          }
+
+          .category {
+            width: 100%;
+            color: #4d61b2;
+            margin: 0 0 5px 5px;
+            font-size: 12px;
+          }
+          .task {
+            width: 100%;
+            height: 100px;
+            clear: none;
+            display: block;
+            overflow: visible;
+            white-space: pre-wrap;
+            margin-bottom: 10px;
+            overflow-y: scroll;
+          }
+          .details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .date {
+              display: flex;
+              align-items: center;
+              justify-content: space-evenly;
+              font-size: 12px;
+              color: #4d61b2;
+
+              span {
+                margin-top: 3px;
+                margin-right: 5px;
+              }
+            }
+
+            .btns {
+              display: flex;
+              align-items: center;
+              span {
+                margin: 0 5px;
+                color: #4d61b2;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+    .notification {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      display: none;
+      opacity: 0;
+
+      &.notification-active {
+        display: flex;
+        opacity: 1;
+      }
+      .icon {
+        margin: 30px;
+        font-size: 4rem;
+        opacity: 0.4;
+      }
+      h1 {
+        font-size: 20px;
+        font-weight: 400;
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+@media screen and(max-width:768px) {
+  .Task {
+    .nav {
+      width: 90%;
+    }
+    .container {
+      width: 90%;
+    }
+  }
+}

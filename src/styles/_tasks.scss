@@ -1,0 +1,40 @@
+.Tasks {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  margin-top: 60px;
+  transition: margin 500ms;
+  background: linear-gradient(to right, #e7ecf1, #ffffff);
+
+  &.nav-open {
+    margin-left: 200px;
+  }
+}
+
+.newTaskButton {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+}
+
+@media screen and(max-width:768px) {
+  .Tasks {
+    height: 80vh;
+    &.nav-open {
+      margin-left: 0;
+    }
+  }
+  .newTaskButton {
+    bottom: -4%;
+  }
+}
